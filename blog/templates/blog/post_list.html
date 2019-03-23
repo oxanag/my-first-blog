@@ -3,20 +3,14 @@
         <title>Oxana's blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Oxana's Blog</a></h1>
-        </div>
+      <div>
+    <h1><a href="/">Oxana's Blog</a></h1>
+</div>
 
-        <div>
-            <p>published: 23.03.2019, 13:55</p>
-            <h2><a href="">My first post</a></h2>
-            <p>We are all a bit mad here.</p>
-        </div>
-
-        <div>
-            <p>published: 23.03.2019, 13:57</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Important thing is keep wanting.</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
